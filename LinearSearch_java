@@ -1,0 +1,56 @@
+import java.io.*;
+
+public class LinearSearch {
+	public static void main(String[] args) {
+		int length = 0;
+		int key = 0;
+		String inpStr = null;
+		BufferedReader inbuf = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("What is the size of the array?");
+		try {
+			inpStr = inbuf.readLine();
+			length = Integer.parseInt(inpStr);
+		} catch (Exception e) {
+			System.out.println("Error in entering size of array!");
+			System.out.println("Exception:" + e);
+			return;
+		}
+		int[] arr = new int[length];
+		System.out.println("Enter elements of array");
+		try {
+			for (int i = 0; i < arr.length; i++) {
+				inpStr = inbuf.readLine();
+				arr[i] = Integer.parseInt(inpStr);
+			}
+		} catch (Exception e) {
+			System.out.println("Error in entering elements of array!");
+			System.out.println("Exception=" + e);
+			return;
+		}
+		System.out.println("Enter the element to be searched for?");
+		try {
+			inpStr = inbuf.readLine();
+			key = Integer.parseInt(inpStr);
+		} catch (Exception e) {
+			System.out.println("Error in entering search element!");
+			System.out.println("Exception=" + e);
+			return;
+		}
+		int res = linearsearch(arr, key);
+		if (res == -1)
+			System.out.println("Element not found!");
+		else
+			System.out.println("Element found at position=" + (res + 1));
+	}
+
+	public static int linearsearch(int[] a, int key) {
+		int i = 0;
+		while (i < a.length) {
+			if (a[i] == key)
+				return i;
+			else
+				i++;
+		}
+		return -1;
+	}
+}
