@@ -1,3 +1,12 @@
+#code
+build/
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+.vscode/
+
 # Compiled class file
 *.class
 
