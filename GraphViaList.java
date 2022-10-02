@@ -1,4 +1,4 @@
-package com.vkstech.algorithms.practice.graph;
+package com.vkstech.rough;
 
 import java.util.ArrayList;
 
